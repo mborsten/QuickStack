@@ -144,6 +144,7 @@ model App {
   replicas Int    @default(1)
   envVars  String @default("")
 
+  command           String?
   memoryReservation Int?
   memoryLimit       Int?
   cpuReservation    Int?

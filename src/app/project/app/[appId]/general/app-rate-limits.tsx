@@ -70,6 +70,19 @@ export default function GeneralAppRateLimits({ app }: {
 
                             <FormField
                                 control={form.control}
+                                name="command"
+                                render={ ( { field } ) => (
+                                    <FormItem>
+                                        <FormLabel>Command</FormLabel>
+                                        <FormControl>
+                                            <Input {...field} value={field.value as string | readonly string[] } />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+
+                            <FormField
+                                control={form.control}
                                 name="memoryLimit"
                                 render={({ field }) => (
                                     <FormItem>

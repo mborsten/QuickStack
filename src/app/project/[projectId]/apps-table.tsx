@@ -26,6 +26,7 @@ export default function AppTable({ app, projectId }: { app: App[], projectId: st
             ['name', 'Name', true],
             ['sourceType', 'Source Type', false, (item) => item.sourceType === 'GIT' ? 'Git' : 'Container'],
             ['replicas', 'Replica Count', false],
+            ['command', 'Command', false],
             ['memoryLimit', 'Memory Limit', false],
             ['memoryReservation', 'Memory Reservation', false],
             ['cpuLimit', 'CPU Limit', false],

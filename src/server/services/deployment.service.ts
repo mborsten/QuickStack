@@ -118,6 +118,7 @@ class DeploymentService {
                                 name: app.id,
                                 image: !!buildJobName ? registryService.createContainerRegistryUrlForAppId(app.id) : app.containerImageSource as string,
                                 imagePullPolicy: 'Always',
+                                ...(app.command != null ? { command: app.command.split(" ") } : {}),
                                 ...(envVars.length > 0 ? { env: envVars } : {}),
                                 ...(allVolumeMounts.length > 0 ? { volumeMounts: allVolumeMounts } : {}),
                             }
